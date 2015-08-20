@@ -23,7 +23,12 @@ Scenario: Add number greather than houndred diferent
 	When I press enter
 	Then the result should be Two Houndred Sixty One  on the screen
 
-Scenario: Throws exception if i entered a not valid number
+Scenario: Throws exception if I entered a not valid number
 	Given I have entered ABCD into the number converter
 	And I press enter
 	Then the exception message should be "ABCD" is not a valid number on the screen
+
+Scenario: Throws exception if I entered number greather than 9999
+	Given I have entered 99999 into the number converter
+	And I press enter
+	Then the exception message should be "99999" is not a valid number on the screen
