@@ -51,9 +51,6 @@ namespace NumberToWords.Steps
         }
 
 
-
-
-
         [Then(@"the exception message should be (.*) on the screen")]
         public void ThenTheExceptionMessageShouldBeABCDIsNotAValidNumberOnTheScreen(string words)
         {
