@@ -38,6 +38,9 @@ namespace NumberToWords
 
         }
 
+        public NumberConverter()
+        {
+        }
 
         public String GetNumberToWord()
         {

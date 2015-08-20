@@ -56,17 +56,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NumberFeature.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\RunnerFeature.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RunnerFeature.feature</DependentUpon>
+    </Compile>
     <Compile Include="Logic\NumberConverter.cs" />
     <Compile Include="Logic\Runner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\NumberFeatureSteps.cs" />
+    <Compile Include="Steps\RunnerFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Features\NumberFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>NumberFeature.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\RunnerFeature.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RunnerFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

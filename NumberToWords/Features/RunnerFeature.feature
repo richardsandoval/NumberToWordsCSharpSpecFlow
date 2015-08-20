@@ -1,11 +1,12 @@
 ﻿Feature: RunnerFeature
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	Creating runner who is responsible run the program request
 
-@mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+@runner
+Scenario: Create NumberConverter object
+	Given nothing yet
+	Then Create NumberConverter objet
+
+Scenario: Add one number to convert
+	Given Input 25
+	And I press enter
+	Then Result is Twenty Five  number
