@@ -27,10 +27,6 @@ namespace NumberToWords
                     throw new ParseNumberConvertException(n);
                 else
                     this._number = n;
-            }
-            catch(ParseNumberConvertException e)
-            {
-                throw new ParseNumberConvertException(number);
             }catch(Exception e)
             {
                 throw new ParseNumberConvertException(number);

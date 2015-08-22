@@ -65,71 +65,34 @@ namespace NumberToWords.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add simple number")]
+        [NUnit.Framework.DescriptionAttribute("Convert")]
         [NUnit.Framework.CategoryAttribute("converter")]
-        public virtual void AddSimpleNumber()
+        [NUnit.Framework.TestCaseAttribute("1", "One", null)]
+        [NUnit.Framework.TestCaseAttribute("9", "Nine", null)]
+        [NUnit.Framework.TestCaseAttribute("15", "Fifteen", null)]
+        [NUnit.Framework.TestCaseAttribute("12", "Twelve", null)]
+        [NUnit.Framework.TestCaseAttribute("61", "Sixty One", null)]
+        [NUnit.Framework.TestCaseAttribute("100", "One Houndred", null)]
+        [NUnit.Framework.TestCaseAttribute("252", "Two Houndred Fifty Two", null)]
+        [NUnit.Framework.TestCaseAttribute("1520", "One Thousand Five Houndred Twenty", null)]
+        [NUnit.Framework.TestCaseAttribute("9999", "Nine Thousand Nine Houndred Ninety Nine", null)]
+        public virtual void Convert(string input, string result, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add simple number", new string[] {
-                        "converter"});
+            string[] @__tags = new string[] {
+                    "converter"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Convert", @__tags);
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("I have entered 1 into the converter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have entered {0} into the converter", input), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.When("I press enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.Then("the result should be One  on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add another simple number diferent")]
-        public virtual void AddAnotherSimpleNumberDiferent()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add another simple number diferent", ((string[])(null)));
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 12
- testRunner.Given("I have entered 9 into the converter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.When("I press enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
- testRunner.Then("the result should be Nine  on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add number greather than ten diferent")]
-        public virtual void AddNumberGreatherThanTenDiferent()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add number greather than ten diferent", ((string[])(null)));
-#line 16
-this.ScenarioSetup(scenarioInfo);
-#line 17
- testRunner.Given("I have entered 26 into the converter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 18
- testRunner.When("I press enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
- testRunner.Then("the result should be Twenty Six  on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add number greather than houndred diferent")]
-        public virtual void AddNumberGreatherThanHoundredDiferent()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add number greather than houndred diferent", ((string[])(null)));
-#line 21
-this.ScenarioSetup(scenarioInfo);
-#line 22
- testRunner.Given("I have entered 261 into the converter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
- testRunner.When("I press enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
- testRunner.Then("the result should be Two Houndred Sixty One  on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the result should be {0} on the screen", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -139,13 +102,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ThrowsExceptionIfIEnteredANotValidNumber()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throws exception if I entered a not valid number", ((string[])(null)));
-#line 26
+#line 23
 this.ScenarioSetup(scenarioInfo);
-#line 27
+#line 24
  testRunner.Given("I have entered ABCD into the number converter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
+#line 25
  testRunner.And("I press enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 26
  testRunner.Then("the exception message should be \"ABCD\" is not a valid number on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -156,13 +119,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ThrowsExceptionIfIEnteredNumberGreatherThan9999()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Throws exception if I entered number greather than 9999", ((string[])(null)));
-#line 31
+#line 28
 this.ScenarioSetup(scenarioInfo);
-#line 32
+#line 29
  testRunner.Given("I have entered 99999 into the number converter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 33
+#line 30
  testRunner.And("I press enter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 31
  testRunner.Then("the exception message should be \"99999\" is not a valid number on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

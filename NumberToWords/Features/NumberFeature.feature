@@ -3,25 +3,22 @@
 		Change a simple number to words
 
 @converter
-Scenario: Add simple number
-	Given I have entered 1 into the converter
+Scenario Outline: Convert
+	Given I have entered <Input> into the converter
 	When I press enter
-	Then the result should be One  on the screen
+	Then the result should be <Result> on the screen
 
-Scenario: Add another simple number diferent
-	Given  I have entered 9 into the converter
-	When I press enter
-	Then the result should be Nine  on the screen
-
-Scenario: Add number greather than ten diferent 
-	Given  I have entered 26 into the converter
-	When I press enter
-	Then the result should be Twenty Six  on the screen
-
-Scenario: Add number greather than houndred diferent 
-	Given  I have entered 261 into the converter
-	When I press enter
-	Then the result should be Two Houndred Sixty One  on the screen
+	Examples: 
+			| Input | Result                                   |
+			| 1     | One                                      |
+			| 9     | Nine                                     |
+			| 15    | Fifteen                                  |
+			| 12    | Twelve                                   |
+			| 61    | Sixty One                                |
+			| 100   | One Houndred                             |
+			| 252   | Two Houndred Fifty Two                   |
+			| 1520  | One Thousand Five Houndred Twenty        |
+			| 9999  | Nine Thousand Nine Houndred Ninety Nine  |
 
 Scenario: Throws exception if I entered a not valid number
 	Given I have entered ABCD into the number converter

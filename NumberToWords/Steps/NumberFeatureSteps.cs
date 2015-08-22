@@ -28,7 +28,7 @@ namespace NumberToWords.Steps
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOneOnTheScreen(String words)
         {
-            Assert.That(_numberToWords.GetNumberToWord(), Is.EqualTo(words));
+            Assert.That(_numberToWords.GetNumberToWord().Substring(0,_numberToWords.GetNumberToWord().Length -1), Is.EqualTo(words));
         }
 
         [Given(@"I have entered (.*) into the number converter")]
